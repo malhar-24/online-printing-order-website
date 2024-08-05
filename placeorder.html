@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Order</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <h1>Print Order Form</h1>
+    <form id="order-form" action="process_order.php" method="POST" enctype="multipart/form-data">
+        <div>
+            <label for="pdfFile">Upload PDF File (Drag and Drop or Browse):</label>
+            <input type="file" id="pdfFile" name="pdfFile" accept=".pdf" required>
+        </div>
+        <div>
+            <label for="copies">Number of Copies:</label>
+            <input type="number" id="copies" name="copies" required>
+            <label for="paperSize">Size of Paper:</label>
+            <select id="paperSize" name="paperSize" required>
+                <option value="a4">A4</option>
+                <option value="letter">Letter</option>
+                <option value="legal">Legal</option>
+                <!-- Add more paper sizes as needed -->
+            </select>
+        </div>
+        <div>
+            <label for="printType">Type of Print:</label>
+            <input type="radio" id="black" name="printType" value="black" required>
+            <label for="black">Black</label>
+            <input type="radio" id="color" name="printType" value="color" required>
+            <label for="color">Color</label>
+        </div>
+        <div>
+            <label for="binding">Binding Options:</label>
+            <input type="checkbox" id="staple" name="binding[]" value="staple">
+            <label for="staple">Staple</label>
+            <input type="checkbox" id="spiralBinding" name="binding[]" value="spiralBinding">
+            <label for="spiralBinding">Spiral Binding</label>
+            <!-- Add more binding options as needed -->
+        </div>
+        <div>
+            <label for="instructions">Special Instructions:</label>
+        </div>
+        <div id="instruction">
+            <textarea id="instructions" name="instructions" rows="4"></textarea>
+        </div>
+        
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+        </div>
+        <div>
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div>
+        <button type="submit">Place Order</button>
+    </form>
+</body>
+</html>
+
